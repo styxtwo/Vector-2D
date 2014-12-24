@@ -41,6 +41,9 @@ namespace Vector2D {
         /// <param name="v">The vector to normalize.</param>
         /// <returns>The normalized vector.</returns>
         public static Vector Normalize(Vector v) {
+            if (v == Vector.ZERO) {
+                return Vector.ZERO;
+            }
             return v / v.Length();
         }
 

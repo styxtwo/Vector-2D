@@ -37,8 +37,13 @@ namespace Vector2D.Tests {
 
             //fraction
             Vector v3 = new Vector(0.1, 0);
-            Vector v4 = VectorUtil.Normalize(v1);
+            Vector v4 = VectorUtil.Normalize(v3);
             Assert.AreEqual(1, v4.Length());
+
+            //fraction
+            Vector v5 = new Vector(0, 0);
+            Vector v6 = VectorUtil.Normalize(v5);
+            Assert.AreEqual(0, v6.Length());
         }
 
         [TestMethod]
