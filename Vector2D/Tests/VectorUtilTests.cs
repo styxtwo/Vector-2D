@@ -30,7 +30,7 @@ namespace Vector2D.Tests {
         }
 
         [TestMethod]
-        public void Normalise() {
+        public void Normalize() {
             Vector v1 = new Vector(908, 3);
             Vector v2 = VectorUtil.Normalize(v1);
             Assert.AreEqual(1, v2.Length());
@@ -40,7 +40,7 @@ namespace Vector2D.Tests {
             Vector v4 = VectorUtil.Normalize(v3);
             Assert.AreEqual(1, v4.Length());
 
-            //fraction
+            //normalizing zero vector returns zero vector.
             Vector v5 = new Vector(0, 0);
             Vector v6 = VectorUtil.Normalize(v5);
             Assert.AreEqual(0, v6.Length());
