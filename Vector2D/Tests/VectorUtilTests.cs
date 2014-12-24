@@ -34,6 +34,19 @@ namespace Vector2D.Tests {
             Vector v1 = new Vector(908, 3);
             Vector v2 = VectorUtil.Normalize(v1);
             Assert.AreEqual(1, v2.Length());
+
+            //fraction
+            Vector v3 = new Vector(0.1, 0);
+            Vector v4 = VectorUtil.Normalize(v1);
+            Assert.AreEqual(1, v4.Length());
+        }
+
+        [TestMethod]
+        public void SetLength() {
+            Vector v1 = new Vector(0, 3);
+            Vector v2 = VectorUtil.SetLength(v1,5);
+            Assert.AreEqual(new Vector(0, 5), v2);
+            Assert.AreEqual(5, v2.Length());
         }
 
         [TestMethod]
@@ -81,6 +94,24 @@ namespace Vector2D.Tests {
             Vector v2 = new Vector(0, 1);
             Vector v3 = VectorUtil.Reflect(v1, v2);
             Assert.AreEqual(new Vector(-3, 3), v3);
+        }
+
+        [TestMethod]
+        public void ClampLength() {
+            //too long
+            Vector v1 = new Vector(0, 6);
+            Vector v2 = VectorUtil.ClampLength(v1, 1, 5);
+            Assert.AreEqual(new Vector(0, 5), v2);
+
+            //too short
+            Vector v3 = new Vector(0, 0.5);
+            Vector v4 = VectorUtil.ClampLength(v3, 1, 5);
+            Assert.AreEqual(new Vector(0, 1), v4);
+
+            //just right
+            Vector v5 = new Vector(0, 4);
+            Vector v6 = VectorUtil.ClampLength(v5, 1, 5);
+            Assert.AreEqual(new Vector(0, 4), v6);
         }
     }
 }

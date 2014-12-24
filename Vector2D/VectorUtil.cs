@@ -45,6 +45,16 @@ namespace Vector2D {
         }
 
         /// <summary>
+        /// Sets the length of the vector.
+        /// </summary>
+        /// <param name="v">The vector whose length to set.</param>
+        /// <param name="length">The length of the vector.</param>
+        /// <returns>The vector with correct length.</returns>
+        public static Vector SetLength(Vector v, double length) {
+            return Normalize(v) * length;
+        }
+
+        /// <summary>
         /// Rotate a vector by a certain angle.
         /// </summary>
         /// <param name="v">The vector to rotate. </param>
@@ -104,6 +114,24 @@ namespace Vector2D {
         public static Vector Reflect(Vector v, Vector normal) {
             Vector n = Normalize(normal);
             return 2 * (Dot(v, n)) * n - v;
+        }
+
+        /// <summary>
+        /// Clamps the vector length between the two imput lengths (inclusive).
+        /// </summary>
+        /// <param name="v">The vector to clampl</param>
+        /// <param name="min">The inclusive minimum length.</param>
+        /// <param name="max">The inclusive maximum length.</param>
+        /// <returns>The clamped vector.</returns>
+        public static Vector ClampLength(Vector v, double min, double max) {
+            double vLength = v.Length();
+            if (vLength < min) {
+                return SetLength(v, min);
+            }
+            if (vLength > max) {
+                return SetLength(v, max);
+            }
+            return v;
         }
     }
 }
