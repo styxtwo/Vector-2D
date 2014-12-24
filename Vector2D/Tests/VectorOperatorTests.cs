@@ -62,9 +62,7 @@ namespace Vector2D.Tests {
             Vector v1 = new Vector(200, 600);
             float f1 = 10;
             Vector v3 = v1 / f1;
-            Vector v4 = f1 / v1;
             Assert.AreEqual(new Vector(20, 60), v3);
-            Assert.AreEqual(new Vector(20, 60), v4);
         }
     }
 }

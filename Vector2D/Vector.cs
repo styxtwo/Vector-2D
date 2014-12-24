@@ -135,8 +135,5 @@ namespace Vector2D {
         public static Vector operator /(Vector a, double b) {
             return new Vector(a.X / b, a.Y / b);
         }
-        public static Vector operator /(double a, Vector b) {
-            return new Vector(b.X / a, b.Y / a);
-        }
     }
 }
