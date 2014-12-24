@@ -32,7 +32,7 @@ namespace Vector2D.Tests {
         [TestMethod]
         public void Normalise() {
             Vector v1 = new Vector(908, 3);
-            Vector v2 = VectorUtil.Normalise(v1);
+            Vector v2 = VectorUtil.Normalize(v1);
             Assert.AreEqual(1, v2.Length());
         }
 
@@ -73,6 +73,14 @@ namespace Vector2D.Tests {
             Vector v2 = new Vector(3, 3);
             Vector v3 = VectorUtil.Lerp(v1, v2, 0.5);
             Assert.AreEqual(new Vector(2, 2), v3);
+        }
+
+        [TestMethod]
+        public void Reflect() {
+            Vector v1 = new Vector(3, 3);
+            Vector v2 = new Vector(0, 1);
+            Vector v3 = VectorUtil.Reflect(v1, v2);
+            Assert.AreEqual(new Vector(-3, 3), v3);
         }
     }
 }

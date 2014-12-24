@@ -32,15 +32,15 @@ namespace Vector2D {
         /// <param name="v2">The second vector. </param>
         /// <returns>The angle between two vectors. </returns>
         public static double Angle(Vector v1, Vector v2) {
-            return Math.Acos(Dot(Normalise(v1), Normalise(v2)));
+            return Math.Acos(Dot(Normalize(v1), Normalize(v2)));
         }
 
         /// <summary>
         /// Normalises a vector.
         /// </summary>
-        /// <param name="v">The vector to normalise.</param>
-        /// <returns>The normalised vector.</returns>
-        public static Vector Normalise(Vector v) {
+        /// <param name="v">The vector to normalize.</param>
+        /// <returns>The normalized vector.</returns>
+        public static Vector Normalize(Vector v) {
             return v / v.Length();
         }
 
@@ -93,6 +93,17 @@ namespace Vector2D {
         /// <returns>The interpolated vector. </returns>
         public static Vector Lerp(Vector v1, Vector v2, double fraction) {
             return (1 - fraction) * v1 + fraction * v2;
+        }
+
+        /// <summary>
+        /// Reflect a vector along a normal.
+        /// </summary>
+        /// <param name="v">The vector to reflect.</param>
+        /// <param name="normal">The normal to reflect it along.</param>
+        /// <returns>The reflected vector. </returns>
+        public static Vector Reflect(Vector v, Vector normal) {
+            Vector n = Normalize(normal);
+            return 2 * (Dot(v, n)) * n - v;
         }
     }
 }
