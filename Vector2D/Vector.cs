@@ -16,6 +16,16 @@ namespace Vector2D {
         public readonly static Vector ONE = new Vector(1, 1);
 
         /// <summary>
+        /// Static constant for the unit X vector.
+        /// </summary>
+        public readonly static Vector UNIT_X = new Vector(1, 0);
+
+        /// <summary>
+        /// Static constant for the unit Y vector.
+        /// </summary>
+        public readonly static Vector UNIT_Y = new Vector(0, 1);
+
+        /// <summary>
         /// X coordinate.
         /// </summary>
         public double X { get; set; }
