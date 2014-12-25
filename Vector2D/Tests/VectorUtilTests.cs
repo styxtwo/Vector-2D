@@ -86,6 +86,14 @@ namespace Vector2D.Tests {
         }
 
         [TestMethod]
+        public void SquaredDistance() {
+            Vector v1 = new Vector(0, 1);
+            Vector v2 = new Vector(0, 3);
+            double distance = VectorUtil.SquaredDistance(v1, v2);
+            Assert.AreEqual(4, distance);
+        }
+
+        [TestMethod]
         public void Lerp() {
             Vector v1 = new Vector(1, 1);
             Vector v2 = new Vector(3, 3);

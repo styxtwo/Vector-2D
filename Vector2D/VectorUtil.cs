@@ -98,6 +98,16 @@ namespace Vector2D {
         }
 
         /// <summary>
+        /// Determines the squared distance between the two vectors.
+        /// </summary>
+        /// <param name="v1">The first vector. </param>
+        /// <param name="v2">The second vector. </param>
+        /// <returns>The squared distance between the vectors.</returns>
+        public static double SquaredDistance(Vector v1, Vector v2) {
+            return (v1 - v2).SquaredLength();
+        }
+
+        /// <summary>
         /// Interpolates linearly between two vectors. 
         /// </summary>
         /// <param name="v1">The first vector. </param>
