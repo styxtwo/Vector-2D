@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vector2D {
+namespace BasicVector {
     /// <summary>
     /// Provides the vector class that is the basis for this project.
     /// </summary>

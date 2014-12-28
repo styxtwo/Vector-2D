@@ -6,7 +6,7 @@
     <ProjectGuid>{879831C7-04B1-4B91-B496-49D91F6B0F4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vector2D</RootNamespace>
+    <RootNamespace>BasicVector</RootNamespace>
     <AssemblyName>Vector2D</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

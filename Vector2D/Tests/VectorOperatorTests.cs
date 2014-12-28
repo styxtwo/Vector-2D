@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Vector2D.Tests {
+namespace BasicVector.Tests {
     [TestClass]
     public class VectorOperatorTests {
 

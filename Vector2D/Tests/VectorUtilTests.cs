@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace Vector2D.Tests {
+namespace BasicVector.Tests {
 
     [TestClass]
     public class VectorUtilTests {
@@ -125,6 +125,25 @@ namespace Vector2D.Tests {
             Vector v5 = new Vector(0, 4);
             Vector v6 = VectorUtil.ClampLength(v5, 1, 5);
             Assert.AreEqual(new Vector(0, 4), v6);
+        }
+
+        [TestMethod]
+        public void CreateVector() {
+            Vector v = VectorUtil.CreateVector(8, Math.PI*3/4);
+            Assert.AreEqual(8, v.Length());
+            Assert.AreEqual(Math.PI * 3 / 4, v.Angle());
+        }
+
+        [TestMethod]
+        public void InsideRectangle() {
+            bool inside = VectorUtil.InsideRectangle(new Vector(1, 2), new Vector(-1, 3), new Vector(4, 0));
+            Assert.AreEqual(true, inside);
+
+            bool outside = VectorUtil.InsideRectangle(new Vector(1, 2), new Vector(2, 3), new Vector(4, 0));
+            Assert.AreEqual(false, outside);
+
+            bool onEdge = VectorUtil.InsideRectangle(new Vector(1, 2), new Vector(1, 3), new Vector(4, 0));
+            Assert.AreEqual(false, onEdge);
         }
     }
 }

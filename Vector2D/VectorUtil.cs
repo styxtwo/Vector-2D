@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vector2D {
+namespace BasicVector {
     /// <summary>
     /// Provides basic utilites for Vectors.
     /// </summary>
@@ -145,6 +145,30 @@ namespace Vector2D {
                 return SetLength(v, max);
             }
             return v;
+        }
+
+        /// <summary>
+        /// Create a vector from a length and angle.
+        /// </summary>
+        /// <param name="length">The length of the new vector. </param>
+        /// <param name="angle">The angle of the new vector. </param>
+        /// <returns>The new vector</returns>
+        public static Vector CreateVector(double length, double angle) {
+            Vector vector = VectorUtil.Rotate(Vector.UNIT_X * length, angle);
+            return vector;
+        }
+
+        /// <summary>
+        /// Checks if the parameter vector is inside of the rectangle created by the other vectors.
+        /// </summary>
+        /// <param name="vector">The vector to check</param>
+        /// <param name="topLeft">The top left of the rectangle.</param>
+        /// <param name="bottomRight">The bottom right of the rectangle.</param>
+        /// <returns>True if inside</returns>
+        public static bool InsideRectangle(Vector vector, Vector topLeft, Vector bottomRight) {
+            bool horizontal = (vector.X < bottomRight.X) && (vector.X > topLeft.X);
+            bool vertical = (vector.Y > bottomRight.Y) && (vector.X < topLeft.Y);
+            return horizontal && vertical;
         }
     }
 }

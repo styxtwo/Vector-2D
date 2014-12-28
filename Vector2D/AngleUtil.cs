@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vector2D {
+namespace BasicVector {
     /// <summary>
     /// Provides basic utilites for angles.
     /// </summary>
