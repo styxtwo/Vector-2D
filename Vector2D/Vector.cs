@@ -8,22 +8,22 @@ namespace BasicVector {
         /// <summary>
         /// Static constant for the zero vector.
         /// </summary>
-        public readonly static Vector ZERO = new Vector();
+        public readonly static Vector Zero = new Vector();
 
         /// <summary>
         /// Static constant for the unit vector.
         /// </summary>
-        public readonly static Vector ONE = new Vector(1, 1);
+        public readonly static Vector One = new Vector(1, 1);
 
         /// <summary>
         /// Static constant for the unit X vector.
         /// </summary>
-        public readonly static Vector UNIT_X = new Vector(1, 0);
+        public readonly static Vector UnitX = new Vector(1, 0);
 
         /// <summary>
         /// Static constant for the unit Y vector.
         /// </summary>
-        public readonly static Vector UNIT_Y = new Vector(0, 1);
+        public readonly static Vector UnitY = new Vector(0, 1);
 
         /// <summary>
         /// X coordinate.
@@ -144,6 +144,9 @@ namespace BasicVector {
         }
         public static Vector operator /(Vector a, double b) {
             return new Vector(a.X / b, a.Y / b);
+        }
+        public static Vector operator -(Vector a) {
+            return new Vector(-a.X, -a.Y);
         }
     }
 }

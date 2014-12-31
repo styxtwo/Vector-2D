@@ -5,6 +5,7 @@ namespace BasicVector {
     /// Provides basic utilites for angles.
     /// </summary>
     public class AngleUtil {
+
         /// <summary>
         /// Converts an angle in degrees to radians.
         /// </summary>

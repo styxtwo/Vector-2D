@@ -64,5 +64,12 @@ namespace BasicVector.Tests {
             Vector v3 = v1 / f1;
             Assert.AreEqual(new Vector(20, 60), v3);
         }
+
+        [TestMethod]
+        public void UnaryMinus() {
+            Vector v1 = new Vector(200, 600);
+            Vector v2 = -v1;
+            Assert.AreEqual(new Vector(-200, -600), v2);
+        }
     }
 }

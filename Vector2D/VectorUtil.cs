@@ -41,8 +41,8 @@ namespace BasicVector {
         /// <param name="v">The vector to normalize.</param>
         /// <returns>The normalized vector.</returns>
         public static Vector Normalize(Vector v) {
-            if (v == Vector.ZERO) {
-                return Vector.ZERO;
+            if (v == Vector.Zero) {
+                return Vector.Zero;
             }
             return v / v.Length();
         }
@@ -154,7 +154,7 @@ namespace BasicVector {
         /// <param name="angle">The angle of the new vector. </param>
         /// <returns>The new vector</returns>
         public static Vector CreateVector(double length, double angle) {
-            Vector vector = VectorUtil.Rotate(Vector.UNIT_X * length, angle);
+            Vector vector = VectorUtil.Rotate(Vector.UnitX * length, angle);
             return vector;
         }
 
@@ -167,7 +167,7 @@ namespace BasicVector {
         /// <returns>True if inside</returns>
         public static bool InsideRectangle(Vector vector, Vector topLeft, Vector bottomRight) {
             bool horizontal = (vector.X < bottomRight.X) && (vector.X > topLeft.X);
-            bool vertical = (vector.Y > bottomRight.Y) && (vector.X < topLeft.Y);
+            bool vertical = (vector.Y > bottomRight.Y) && (vector.Y < topLeft.Y);
             return horizontal && vertical;
         }
     }
