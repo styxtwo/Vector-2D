@@ -30,6 +30,13 @@ namespace BasicVector.Tests {
         }
 
         [TestMethod]
+        public void SingleAngle() {
+            Vector v1 = new Vector(0, 1);
+            double angle = VectorUtil.Angle(v1);
+            Assert.AreEqual(90, AngleUtil.ToDegrees(angle));
+        }
+
+        [TestMethod]
         public void Normalize() {
             Vector v1 = new Vector(908, 3);
             Vector v2 = VectorUtil.Normalize(v1);

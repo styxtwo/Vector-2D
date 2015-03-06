@@ -36,6 +36,15 @@ namespace BasicVector {
         }
 
         /// <summary>
+        /// Returns the angle between a vector and the unitX vector.
+        /// </summary>
+        /// <param name="v1">The vector. </param>
+        /// <returns>The angle between a vector and the unitX vector.. </returns>
+        public static double Angle(Vector v1) {
+            return Math.Acos(Dot(Normalize(v1), Normalize(Vector.UnitX)));
+        }
+
+        /// <summary>
         /// Normalises a vector.
         /// </summary>
         /// <param name="v">The vector to normalize.</param>
@@ -154,8 +163,7 @@ namespace BasicVector {
         /// <param name="angle">The angle of the new vector. </param>
         /// <returns>The new vector</returns>
         public static Vector CreateVector(double length, double angle) {
-            Vector vector = VectorUtil.Rotate(Vector.UnitX * length, angle);
-            return vector;
+            return VectorUtil.Rotate(Vector.UnitX * length, angle);
         }
 
         /// <summary>
