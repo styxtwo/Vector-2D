@@ -1,4 +1,4 @@
 Vector2D
 =========
 
-An easy to use Vector2D library for c#
+A basic Vector2D library for C#.
