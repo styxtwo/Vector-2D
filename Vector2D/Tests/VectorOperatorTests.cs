@@ -9,7 +9,7 @@ namespace BasicVector.Tests {
         public void Equals() {
             Vector v1 = new Vector(10, 10);
             Vector v2 = new Vector(10, 10);
-            Vector v3 = null;
+            Vector v3 = new Vector(10, 5);
             Assert.AreEqual(v1, v2);
             Assert.AreNotEqual(v3, v2);
             Assert.AreNotEqual(v1, v3);
