@@ -52,13 +52,13 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="AngleUtil.cs" />
+    <Compile Include="Main\AngleUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\VectorOperatorTests.cs" />
-    <Compile Include="Tests\VectorUtilTests.cs" />
-    <Compile Include="Vector.cs" />
-    <Compile Include="Tests\VectorTests.cs" />
-    <Compile Include="VectorUtil.cs" />
+    <Compile Include="Test\VectorOperatorTests.cs" />
+    <Compile Include="Test\VectorUtilTests.cs" />
+    <Compile Include="Main\Vector.cs" />
+    <Compile Include="Test\VectorTests.cs" />
+    <Compile Include="Main\VectorUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
