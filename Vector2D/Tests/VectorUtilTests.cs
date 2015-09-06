@@ -1,11 +1,10 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
+using System;
 namespace BasicVector.Tests {
-
-    [TestClass]
+    [TestFixture]
     public class VectorUtilTests {
 
-        [TestMethod]
+        [Test]
         public void Dot() {
             Vector v1 = new Vector(2, 6);
             Vector v2 = new Vector(3, -5);
@@ -13,7 +12,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(-24, dot);
         }
 
-        [TestMethod]
+        [Test]
         public void Cross() {
             Vector v1 = new Vector(2, 6);
             Vector v2 = new Vector(3, -5);
@@ -21,7 +20,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(-28, cross);
         }
 
-        [TestMethod]
+        [Test]
         public void Angle() {
             Vector v1 = new Vector(0, 1);
             Vector v2 = new Vector(1, -1);
@@ -29,14 +28,14 @@ namespace BasicVector.Tests {
             Assert.AreEqual(135, AngleUtil.ToDegrees(angle));
         }
 
-        [TestMethod]
+        [Test]
         public void SingleAngle() {
             Vector v1 = new Vector(0, 1);
             double angle = VectorUtil.Angle(v1);
             Assert.AreEqual(90, AngleUtil.ToDegrees(angle));
         }
 
-        [TestMethod]
+        [Test]
         public void Normalize() {
             Vector v1 = new Vector(908, 3);
             Vector v2 = VectorUtil.Normalize(v1);
@@ -53,7 +52,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(0, v6.Length);
         }
 
-        [TestMethod]
+        [Test]
         public void SetLength() {
             Vector v1 = new Vector(0, 3);
             Vector v2 = VectorUtil.SetLength(v1,5);
@@ -61,7 +60,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(5, v2.Length);
         }
 
-        [TestMethod]
+        [Test]
         public void Rotate() {
             Vector v1 = new Vector(0, 1);
             Vector v2 = VectorUtil.Rotate(v1, Math.PI);
@@ -70,7 +69,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(-1, v3.X);
         }
 
-        [TestMethod]
+        [Test]
         public void RotateTo() {
             Vector v1 = new Vector(0, 1);
             Vector v2 = VectorUtil.RotateTo(v1, 0);
@@ -80,21 +79,21 @@ namespace BasicVector.Tests {
             Assert.AreEqual(1, v3.Length);
         }
 
-        [TestMethod]
+        [Test]
         public void TurnLeft() {
             Vector v1 = new Vector(0, 1);
             Vector v2 = VectorUtil.TurnLeft(v1);
             Assert.AreEqual(new Vector(-1, 0), v2);
         }
 
-        [TestMethod]
+        [Test]
         public void TurnRight() {
             Vector v1 = new Vector(0, 1);
             Vector v2 = VectorUtil.TurnRight(v1);
             Assert.AreEqual(new Vector(1, 0), v2);
         }
 
-        [TestMethod]
+        [Test]
         public void Distance() {
             Vector v1 = new Vector(0, 1);
             Vector v2 = new Vector(0, 2);
@@ -102,7 +101,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(1, distance);
         }
 
-        [TestMethod]
+        [Test]
         public void SquaredDistance() {
             Vector v1 = new Vector(0, 1);
             Vector v2 = new Vector(0, 3);
@@ -110,7 +109,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(4, distance);
         }
 
-        [TestMethod]
+        [Test]
         public void Lerp() {
             Vector v1 = new Vector(1, 1);
             Vector v2 = new Vector(3, 3);
@@ -118,7 +117,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(new Vector(2, 2), v3);
         }
 
-        [TestMethod]
+        [Test]
         public void Reflect() {
             Vector v1 = new Vector(3, 3);
             Vector v2 = new Vector(0, 1);
@@ -126,7 +125,7 @@ namespace BasicVector.Tests {
             Assert.AreEqual(new Vector(-3, 3), v3);
         }
 
-        [TestMethod]
+        [Test]
         public void ClampLength() {
             //too long
             Vector v1 = new Vector(0, 6);
@@ -144,14 +143,14 @@ namespace BasicVector.Tests {
             Assert.AreEqual(new Vector(0, 4), v6);
         }
 
-        [TestMethod]
+        [Test]
         public void CreateVector() {
             Vector v = VectorUtil.CreateVector(8, Math.PI*3/4);
             Assert.AreEqual(8, v.Length);
             Assert.AreEqual(Math.PI * 3 / 4, v.Angle);
         }
 
-        [TestMethod]
+        [Test]
         public void InsideRectangle() {
             bool inside = VectorUtil.InsideRectangle(new Vector(1, 2), new Vector(-1, 3), new Vector(4, 0));
             Assert.AreEqual(true, inside);
