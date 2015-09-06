@@ -7,7 +7,7 @@ namespace BasicVector.Tests {
         [Test]
         public void Length() {
             Vector v1 = new Vector(3,-4);
-            Assert.AreEqual(5, v1.Length);
+            Assert.AreEqual(7, v1.Length);
         }
 
         [Test]
