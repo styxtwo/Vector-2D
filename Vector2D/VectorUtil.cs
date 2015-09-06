@@ -53,7 +53,7 @@ namespace BasicVector {
             if (v == Vector.Zero) {
                 return Vector.Zero;
             }
-            return v / v.Length();
+            return v / v.Length;
         }
 
         /// <summary>
@@ -76,6 +76,17 @@ namespace BasicVector {
             double X = v.X * Math.Cos(angle) - v.Y * Math.Sin(angle);
             double Y = v.X * Math.Sin(angle) + v.Y * Math.Cos(angle);
             return new Vector(X, Y);
+        }
+
+        /// <summary>
+        /// Rotate a vector to a certain angle.
+        /// </summary>
+        /// <param name="v">The vector to rotate. </param>
+        /// <param name="angle">The angle to rotate to. </param>
+        /// <returns>The rotated vector. </returns>
+        public static Vector RotateTo(Vector v, double angle) {
+            double length = v.Length;
+            return CreateVector(length, angle);
         }
 
         /// <summary>
@@ -103,7 +114,7 @@ namespace BasicVector {
         /// <param name="v2">The second vector. </param>
         /// <returns>The distance between the vectors.</returns>
         public static double Distance(Vector v1, Vector v2) {
-            return (v1 - v2).Length();
+            return (v1 - v2).Length;
         }
 
         /// <summary>
@@ -113,7 +124,7 @@ namespace BasicVector {
         /// <param name="v2">The second vector. </param>
         /// <returns>The squared distance between the vectors.</returns>
         public static double SquaredDistance(Vector v1, Vector v2) {
-            return (v1 - v2).SquaredLength();
+            return (v1 - v2).SquaredLength;
         }
 
         /// <summary>
@@ -146,7 +157,7 @@ namespace BasicVector {
         /// <param name="max">The inclusive maximum length.</param>
         /// <returns>The clamped vector.</returns>
         public static Vector ClampLength(Vector v, double min, double max) {
-            double vLength = v.Length();
+            double vLength = v.Length;
             if (vLength < min) {
                 return SetLength(v, min);
             }

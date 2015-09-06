@@ -40,17 +40,17 @@ namespace BasicVector.Tests {
         public void Normalize() {
             Vector v1 = new Vector(908, 3);
             Vector v2 = VectorUtil.Normalize(v1);
-            Assert.AreEqual(1, v2.Length());
+            Assert.AreEqual(1, v2.Length);
 
             //fraction
             Vector v3 = new Vector(0.1, 0);
             Vector v4 = VectorUtil.Normalize(v3);
-            Assert.AreEqual(1, v4.Length());
+            Assert.AreEqual(1, v4.Length);
 
             //normalizing zero vector returns zero vector.
             Vector v5 = new Vector(0, 0);
             Vector v6 = VectorUtil.Normalize(v5);
-            Assert.AreEqual(0, v6.Length());
+            Assert.AreEqual(0, v6.Length);
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@ namespace BasicVector.Tests {
             Vector v1 = new Vector(0, 3);
             Vector v2 = VectorUtil.SetLength(v1,5);
             Assert.AreEqual(new Vector(0, 5), v2);
-            Assert.AreEqual(5, v2.Length());
+            Assert.AreEqual(5, v2.Length);
         }
 
         [TestMethod]
@@ -68,6 +68,16 @@ namespace BasicVector.Tests {
             Vector v3 = VectorUtil.Rotate(v1, Math.PI / 2);
             Assert.AreEqual(-1, v2.Y);
             Assert.AreEqual(-1, v3.X);
+        }
+
+        [TestMethod]
+        public void RotateTo() {
+            Vector v1 = new Vector(0, 1);
+            Vector v2 = VectorUtil.RotateTo(v1, 0);
+            Vector v3 = VectorUtil.RotateTo(v2, Math.PI / 2);
+            Assert.AreEqual(0, v2.Y);
+            Assert.AreEqual(1, v2.Length);
+            Assert.AreEqual(1, v3.Length);
         }
 
         [TestMethod]
@@ -137,8 +147,8 @@ namespace BasicVector.Tests {
         [TestMethod]
         public void CreateVector() {
             Vector v = VectorUtil.CreateVector(8, Math.PI*3/4);
-            Assert.AreEqual(8, v.Length());
-            Assert.AreEqual(Math.PI * 3 / 4, v.Angle());
+            Assert.AreEqual(8, v.Length);
+            Assert.AreEqual(Math.PI * 3 / 4, v.Angle);
         }
 
         [TestMethod]

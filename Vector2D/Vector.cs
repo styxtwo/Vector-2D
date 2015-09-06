@@ -6,11 +6,11 @@ namespace BasicVector {
     /// <summary>
     /// Provides the vector class that is the basis for this project.
     /// </summary>
-    public class Vector {
+    public struct Vector {
         /// <summary>
         /// Static constant for the zero vector.
         /// </summary>
-        public readonly static Vector Zero = new Vector();
+        public readonly static Vector Zero = new Vector(0, 0);
 
         /// <summary>
         /// Static constant for the unit vector.
@@ -38,45 +38,41 @@ namespace BasicVector {
         public double Y { get; set; }
 
         /// <summary>
-        /// Empty constructor, sets X and Y to zero.
+        /// The length of the vector.
         /// </summary>
-        public Vector() {
-            X = 0;
-            Y = 0;
+        public double Length {
+            get {
+                return Math.Sqrt(SquaredLength);
+            }
         }
 
+        /// <summary>
+        /// The squared length of the vector. Useful for optimalisation.
+        /// </summary>
+        public double SquaredLength {
+            get {
+                return X * X + Y * Y;
+            }
+        }
+
+        /// <summary>
+        /// The absolute angle of the vector.
+        /// </summary>
+        public double Angle {
+            get {
+                return Math.Atan2(Y, X);
+            }
+        }
+        
         /// <summary>
         /// Main Constructor.
         /// </summary>
         /// <param name="xValue">The x value of the vector. </param>
         /// <param name="yValue">The y value of the vector. </param>
-        public Vector(double xValue, double yValue) {
+        public Vector(double xValue, double yValue)
+            : this() {
             X = xValue;
             Y = yValue;
-        }
-
-        /// <summary>
-        /// Returns the length of the vector.
-        /// </summary>
-        /// <returns>The length of the vector.</returns>
-        public double Length() {
-            return Math.Sqrt(X * X + Y * Y);
-        }
-
-        /// <summary>
-        /// Returns the squared length of the vector. Useful for optimalisation.
-        /// </summary>
-        /// <returns>The squared length of the vector.</returns>
-        public double SquaredLength() {
-            return X * X + Y * Y;
-        }
-
-        /// <summary>
-        /// Returns the absolute angle of the vector.
-        /// </summary>
-        /// <returns></returns>
-        public double Angle() {
-            return Math.Atan2(Y, X);
         }
 
         /// <summary>
@@ -96,7 +92,7 @@ namespace BasicVector {
             if (this.GetType() != obj.GetType())
                 return false;
 
-            Vector other = (obj as Vector);
+            Vector other = ((Vector)obj);
             return (X == other.X) && (Y == other.Y);
         }
 
