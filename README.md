@@ -1,5 +1,4 @@
 Vector2D
-========= 
+=========
 
-A Vector2D library for C#.      
- 
+A Vector2D library for C#.
