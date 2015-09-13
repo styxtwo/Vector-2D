@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package>
     <metadata>
         <id>Vector-2D</id>
         <version>1.0.1</version>
