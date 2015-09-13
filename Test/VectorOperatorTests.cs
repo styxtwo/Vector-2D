@@ -1,12 +1,14 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace BasicVector.Tests {
+namespace BasicVector.Tests
+{
     [TestFixture]
-    public class VectorOperatorTests {
-
+    public class VectorOperatorTests
+    {
         [Test]
-        public void Equals() {
+        public void Equals()
+        {
             Vector v1 = new Vector(10, 10);
             Vector v2 = new Vector(10, 10);
             Vector v3 = new Vector(10, 5);
@@ -16,7 +18,8 @@ namespace BasicVector.Tests {
             Assert.AreEqual(v3, v3);
         }
         [Test]
-        public void Addition() {
+        public void Addition()
+        {
             Vector v1 = new Vector(10, 10);
             Vector v2 = new Vector(5, -5);
             Vector v3 = v1 + v2;
@@ -24,7 +27,8 @@ namespace BasicVector.Tests {
         }
 
         [Test]
-        public void Subtraction() {
+        public void Subtraction()
+        {
             Vector v1 = new Vector(10, 10);
             Vector v2 = new Vector(5, -5);
             Vector v3 = v1 - v2;
@@ -32,7 +36,8 @@ namespace BasicVector.Tests {
         }
 
         [Test]
-        public void VectorMultiplication() {
+        public void VectorMultiplication()
+        {
             Vector v1 = new Vector(2, 6);
             Vector v2 = new Vector(3, -5);
             Vector v3 = v1 * v2;
@@ -40,7 +45,8 @@ namespace BasicVector.Tests {
         }
 
         [Test]
-        public void FloatMultiplication() {
+        public void FloatMultiplication()
+        {
             Vector v1 = new Vector(2, 6);
             float f1 = 10;
             Vector v3 = v1 * f1;
@@ -50,7 +56,8 @@ namespace BasicVector.Tests {
         }
 
         [Test]
-        public void VectorDivision() {
+        public void VectorDivision()
+        {
             Vector v1 = new Vector(30, 25);
             Vector v2 = new Vector(3, -5);
             Vector v3 = v1 / v2;
@@ -58,7 +65,8 @@ namespace BasicVector.Tests {
         }
 
         [Test]
-        public void FloatDivision() {
+        public void FloatDivision()
+        {
             Vector v1 = new Vector(200, 600);
             float f1 = 10;
             Vector v3 = v1 / f1;
@@ -66,7 +74,8 @@ namespace BasicVector.Tests {
         }
 
         [Test]
-        public void UnaryMinus() {
+        public void UnaryMinus()
+        {
             Vector v1 = new Vector(200, 600);
             Vector v2 = -v1;
             Assert.AreEqual(new Vector(-200, -600), v2);

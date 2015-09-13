@@ -2,11 +2,13 @@
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-namespace BasicVector {
+namespace BasicVector
+{
     /// <summary>
     /// Provides the vector class that is the basis for this project.
     /// </summary>
-    public struct Vector {
+    public struct Vector
+    {
         /// <summary>
         /// Static constant for the zero vector.
         /// </summary>
@@ -40,8 +42,10 @@ namespace BasicVector {
         /// <summary>
         /// The length of the vector.
         /// </summary>
-        public double Length {
-            get {
+        public double Length
+        {
+            get
+            {
                 return Math.Sqrt(SquaredLength);
             }
         }
@@ -49,8 +53,10 @@ namespace BasicVector {
         /// <summary>
         /// The squared length of the vector. Useful for optimalisation.
         /// </summary>
-        public double SquaredLength {
-            get {
+        public double SquaredLength
+        {
+            get
+            {
                 return X * X + Y * Y;
             }
         }
@@ -58,19 +64,22 @@ namespace BasicVector {
         /// <summary>
         /// The absolute angle of the vector.
         /// </summary>
-        public double Angle {
-            get {
+        public double Angle
+        {
+            get
+            {
                 return Math.Atan2(Y, X);
             }
         }
-        
+
         /// <summary>
         /// Main Constructor.
         /// </summary>
         /// <param name="xValue">The x value of the vector. </param>
         /// <param name="yValue">The y value of the vector. </param>
         public Vector(double xValue, double yValue)
-            : this() {
+            : this()
+        {
             X = xValue;
             Y = yValue;
         }
@@ -80,12 +89,15 @@ namespace BasicVector {
         /// </summary>
         /// <param name="obj">The object to test equality against.</param>
         /// <returns>Whether the objects are equal. </returns>
-        public override bool Equals(object obj) {
-            if (Object.ReferenceEquals(obj, null)) {
+        public override bool Equals(object obj)
+        {
+            if (Object.ReferenceEquals(obj, null))
+            {
                 return false;
             }
 
-            if (Object.ReferenceEquals(this, obj)) {
+            if (Object.ReferenceEquals(this, obj))
+            {
                 return true;
             }
 
@@ -100,7 +112,8 @@ namespace BasicVector {
         /// Overrides the hashcode.
         /// </summary>
         /// <returns>The hashcode for the vector.</returns>
-        public override int GetHashCode() {
+        public override int GetHashCode()
+        {
             return X.GetHashCode() ^ Y.GetHashCode();
         }
 
@@ -108,42 +121,63 @@ namespace BasicVector {
         /// ToString method overriden for easy printing/debugging.
         /// </summary>
         /// <returns>The string representation of the vector.</returns>
-        public override string ToString() {
+        public override string ToString()
+        {
             return "(" + X + ", " + Y + ")";
         }
 
         /*----------------------- Operator overloading below ------------------------------*/
-        public static bool operator ==(Vector v1, Vector v2) {
-            if (object.ReferenceEquals(v1, null)) {
+        public static bool operator ==(Vector v1, Vector v2)
+        {
+            if (object.ReferenceEquals(v1, null))
+            {
                 return object.ReferenceEquals(v2, null);
             }
             return v1.Equals(v2);
         }
-        public static bool operator !=(Vector v1, Vector v2) {
+
+        public static bool operator !=(Vector v1, Vector v2)
+        {
             return !(v1 == v2);
         }
-        public static Vector operator +(Vector a, Vector b) {
+
+        public static Vector operator +(Vector a, Vector b)
+        {
             return new Vector(a.X + b.X, a.Y + b.Y);
         }
-        public static Vector operator -(Vector a, Vector b) {
+
+        public static Vector operator -(Vector a, Vector b)
+        {
             return new Vector(a.X - b.X, a.Y - b.Y);
         }
-        public static Vector operator *(Vector a, Vector b) {
+
+        public static Vector operator *(Vector a, Vector b)
+        {
             return new Vector(a.X * b.X, a.Y * b.Y);
         }
-        public static Vector operator *(Vector a, double b) {
+
+        public static Vector operator *(Vector a, double b)
+        {
             return new Vector(a.X * b, a.Y * b);
         }
-        public static Vector operator *(double a, Vector b) {
+
+        public static Vector operator *(double a, Vector b)
+        {
             return new Vector(b.X * a, b.Y * a);
         }
-        public static Vector operator /(Vector a, Vector b) {
+
+        public static Vector operator /(Vector a, Vector b)
+        {
             return new Vector(a.X / b.X, a.Y / b.Y);
         }
-        public static Vector operator /(Vector a, double b) {
+
+        public static Vector operator /(Vector a, double b)
+        {
             return new Vector(a.X / b, a.Y / b);
         }
-        public static Vector operator -(Vector a) {
+
+        public static Vector operator -(Vector a)
+        {
             return new Vector(-a.X, -a.Y);
         }
     }
