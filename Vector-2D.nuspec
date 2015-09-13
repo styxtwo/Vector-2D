@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package>
     <metadata>
         <id>Vector-2D</id>
         <version>1.0.1</version>
         <title>Vector 2D</title>
         <authors>Ruben Zoet</authors>
         <owners>Ruben Zoet</owners>
+        <licenseUrl>https://raw.githubusercontent.com/styxtwo/Vector-2D/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/styxtwo/Vector-2D</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Basic 2D vector implementation in C#. </description>
+        <description>Basic 2D vector implementation, provides an immutable Vector class and a set of utility methods.</description>
         <summary />
+        <tags>vector 2d utility math maths vector2 vector2d</tags>
+        <dependencies> 
+            <dependency id="NUnit" version="2.6.4" />
+        </dependencies> 
     </metadata>
     <files>
-        <file src="\Release\Vector2D.dll" target="lib\Vector2D.dll" />
+        <file src="bin/Release/Vector2D.dll" target="lib/Vector2D.dll" />
     </files>
 </package>
