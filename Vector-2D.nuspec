@@ -11,7 +11,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Basic 2D vector implementation, provides an immutable Vector class and a set of utility methods.</description>
         <summary />
-        <tags>vector 2d utility math maths</tags>
+        <tags>vector 2d utility math maths vector2 vector2d</tags>
         <dependencies> 
             <dependency id="NUnit" version="2.6.4" />
         </dependencies> 
