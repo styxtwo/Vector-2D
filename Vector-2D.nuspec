@@ -11,11 +11,11 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Basic 2D vector implementation. Provides an immutable Vector class and a set of utility methods.</description>
         <summary />
+        <dependencies> 
+            <dependency id="NUnit" version="2.6.4" />
+        </dependencies> 
     </metadata>
     <files>
         <file src="bin/Release/Vector2D.dll" target="lib\Vector2D.dll" />
     </files>
-    <dependencies> 
-        <dependency id="NUnit" version="2.6.4" />
-    </dependencies> 
 </package>
