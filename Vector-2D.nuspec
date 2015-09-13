@@ -15,4 +15,10 @@
     <files>
         <file src="bin/Release/Vector2D.dll" target="lib\Vector2D.dll" />
     </files>
+    <dependencies> 
+       <group>
+          <dependency id="NUnit" version="2.6.4" />
+       </group>
+    </dependencies> 
+   
 </package>
