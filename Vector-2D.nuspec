@@ -12,6 +12,6 @@
         <summary />
     </metadata>
     <files>
-        <file src="bin\Release\Vector2D.dll" target="lib\Vector2D.dll" />
+        <file src="..\bin\Release\Vector2D.dll" target="lib\Vector2D.dll" />
     </files>
 </package>
