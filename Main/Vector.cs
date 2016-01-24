@@ -32,12 +32,12 @@ namespace BasicVector
         /// <summary>
         /// X coordinate.
         /// </summary>
-        public double X { get; set; }
+        public double X { get; private set; }
 
         /// <summary>
         /// Y coordinate.
         /// </summary>
-        public double Y { get; set; }
+        public double Y { get; private set; }
 
         /// <summary>
         /// The length of the vector.
